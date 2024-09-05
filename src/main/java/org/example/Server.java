@@ -63,11 +63,8 @@ public class Server {
                 final String method = parts[0];
                 final String path = parts[1];
 
-
-                final List<NameValuePair> params = URLEncodedUtils.parse(path, StandardCharsets.UTF_8);
-
                 InputStream inputStreamBody = socket.getInputStream();
-                Request request = new Request(method, path, inputStreamBody, params);
+                Request request = new Request(method, path, inputStreamBody);
 
                 Handler handler = handlers.getOrDefault(method, new ConcurrentHashMap<>()).get(request.getPath());
                 if (handler == null) {

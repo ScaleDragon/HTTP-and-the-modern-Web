@@ -16,7 +16,7 @@ public class Request {
     private final BufferedReader body;
     private final List<NameValuePair> queryParams;
 
-    public Request(String method, String path, InputStream body, List<NameValuePair> queryParams) {
+    public Request(String method, String path, InputStream body) {
         this.method = method;
         this.body = new BufferedReader(new InputStreamReader(body));
         String[] parts = path.split("\\?", 2);
