@@ -33,13 +33,6 @@ public class Request {
         }
     }
 
-    //    public String getPostParam(String name) {
-//        return postParams.stream()
-//                .filter(p -> p.getName().equalsIgnoreCase(name))
-//                .map(NameValuePair::getValue)
-//                .findFirst()
-//                .orElse(null);
-//    }
     public List<NameValuePair> getPostParam(String name) {
         return this.postParams.stream()
                 .filter(p -> p.getName().equalsIgnoreCase(name))
